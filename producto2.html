@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEMON SALSA </title>
+  <link href="dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-yellow-50 text-gray-900 font-sans">
+  <div class="max-w-5xl mx-auto p-6">
+
+    <!-- Encabezado -->
+    <header class="text-center mb-10">
+      
+      <h1 class="text-5xl font-extrabold text-green-600">Lemon Salsa  <br> Tamaño Mediano </h1>
+      <img src="mediana.jpg" alt="Logo de Lemon Salsa" class="mx-auto mb-4 object-contain" style="width: 230px; height: 230px;">
+      <p class="text-lg mt-2 text-gray-700">En esta presentacion de la salsa es el bote mediano br 
+        que contiene 250 gr de LEMON SALSA
+      </p>
+    </header>
+
+    <!-- Botón para abrir el formulario -->
+    <div class="text-center">
+      <button onclick="abrirModal()" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
+        Realizar Pedido
+      </button>
+    </div>
+
+    
+
+    <!-- Pie de página -->
+    <footer class="text-center mt-12 text-sm text-gray-600">
+      © 2025 Lemon Salsa. Todos los derechos reservados.
+    </footer>
+
+  </div>
+
+     <!-- MODAL: formulario flotante -->
+     <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+       <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
+         <button onclick="cerrarModal()" class="absolute top-2 right-3 text-gray-400 hover:text-red-500 text-xl">&times;</button>
+         <h2 class="text-2xl font-bold mb-4 text-center">Formulario de Compra</h2>
+         <form>
+           <div class="mb-4">
+             <label class="block mb-1 font-medium">Nombre completo</label>
+             <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" required>
+           </div>
+           <div class="mb-4">
+             <label class="block mb-1 font-medium">Correo electrónico</label>
+             <input type="email" class="w-full border border-gray-300 rounded px-3 py-2" required>
+           </div>
+           <div class="mb-6">
+             <label class="block mb-1 font-medium">Cantidad</label>
+             <input type="number" min="1" class="w-full border border-gray-300 rounded px-3 py-2" required>
+           </div>
+           <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+             Enviar pedido
+           </button>
+         </form>
+       </div>
+     </div>
+
+  <!-- Script para mostrar y ocultar modal -->
+  <script>
+    function abrirModal() {
+      document.getElementById("modal").classList.remove("hidden");
+      document.getElementById("modal").classList.add("flex");
+    }
+
+    function cerrarModal() {
+      document.getElementById("modal").classList.add("hidden");
+      document.getElementById("modal").classList.remove("flex");
+    }
+
+
+  </script>
+</body>
+</html>
+
