@@ -5,21 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LEMON SALSA </title>
   <link href="dist/output.css" rel="stylesheet">
+  <style>
+  body {
+    background-color: #f1e775;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('limon.png');
+    background-repeat: repeat;
+    background-size: 160px;
+    background-position: 0 0;
+    background-blend-mode: multiply;
+    opacity: 0.20;
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>
 </head>
 <body class="bg-yellow-50 text-gray-900 font-sans">
   <div class="max-w-5xl mx-auto p-6">
 
-    
+    <div class="flex justify-left mt-6">
+    <a href="index.html" class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition inline-block">
+      INICIO
+    </a>
+  </div>
+
     <header class="text-center mb-10">
-      
+      <br>
       <h1 class="text-5xl font-extrabold text-green-600">Lemon Salsa  <br> Tamaño Mediano </h1>
-      <img src="mediana.jpg" alt="Logo de Lemon Salsa" class="mx-auto mb-4 object-contain" style="width: 230px; height: 230px;">
-      <p class="text-lg mt-2 text-gray-700">En esta presentacion de la salsa es el bote mediano br 
+      <p class="text-lg mt-2 text-gray-700">En esta presentacion de la salsa es el bote mediano <br> 
         que contiene 250 gr de LEMON SALSA
       </p>
     </header>
 
-    
+    <div class="flex justify-center mb-10">
+      <div class="bg-white p-4 rounded shadow inline-block">
+        <img src="mediana.jpg" alt="Logo de Lemon Salsa" class="mx-auto object-contain" style="width: 230px; height: 230px;">
+      </div>
+    </div>
+
+    <div class="text-center mb-10">
+      <p class="text-lg mt-2 text-gray-700">Lemon Salsa es una salsa especial, pensada para las personas intolerante a la lactosa
+      ya que esta hecha a base de leche de Soja, Huevo y Limon, no contiene conservantes</p>
+    </div>
+
   <div class="flex justify-center items-center gap-6 mt-6">
   
     <button onclick="abrirModal()" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
@@ -33,16 +67,12 @@
     </button>
 
   </div>
-
-    
-
     
     <footer class="text-center mt-12 text-sm text-gray-600">
       © 2025 Lemon Salsa. Todos los derechos reservados.
     </footer>
 
   </div>
-
      
      <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
        <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
@@ -68,7 +98,6 @@
        </div>
      </div>
 
-  
   <script>
     function abrirModal() {
       document.getElementById("modal").classList.remove("hidden");
@@ -79,7 +108,6 @@
       document.getElementById("modal").classList.add("hidden");
       document.getElementById("modal").classList.remove("flex");
     }
-
 
   </script>
 </body>

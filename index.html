@@ -5,72 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LEMON SALSA</title>
   <link href="dist/output.css" rel="stylesheet">
+  <style>
+  body {
+    background-color: #f1e775;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('limon.png');
+    background-repeat: repeat;
+    background-size: 160px;
+    background-position: 0 0;
+    background-blend-mode: multiply;
+    opacity: 0.20;
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>
 </head>
 <body class="bg-yellow-50 text-gray-900 font-sans">
-  <div class="max-w-5xl mx-auto p-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
-    
     <header class="text-center mb-10">
-      <img src="lemon salsa.jpg" alt="Logo de Lemon Salsa" class="mx-auto mb-4 object-contain" style="width: 230px; height: 230px;">
+      <img src="lemon salsa.jpg" alt="Logo de Lemon Salsa"
+     class="mx-auto object-contain" style="width: 500px; height: 500px;">
       <h1 class="text-5xl font-extrabold text-green-600">LEMON SALSA</h1>
-      <p class="text-lg mt-2 text-gray-700">Sabor cítrico en cada presentación</p>
+      <p class="text-lg font-extrabold mt-5 text-gray-900">Sabor cítrico en cada presentación</p>
     </header>
 
-    
     <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
   <div class="bg-white p-4 rounded shadow">
     <a href="producto1.html">
-      <img src="nachos pequeños.jpg" alt="Bote Pequeño" class="rounded w-full h-64 object-cover">
+      <img src="nachos pequeños.jpg" alt="Bote Pequeño" class="rounded w-full h-48 sm:h-64 object-cover">
       <p class="text-center mt-2 font-medium">Bote Pequeño más Su Bolsita de Nachos</p>
     </a>
   </div>
 
   <div class="bg-white p-4 rounded shadow">
     <a href="producto2.html">
-      <img src="mediana.jpg" alt="Bote 500 ml" class="rounded w-full h-64 object-cover">
+      <img src="mediana.jpg" alt="Bote 500 ml" class="rounded w-full h-48 sm:h-64 object-cover">
       <p class="text-center mt-2 font-medium">Bote Mediano</p>
     </a>
   </div>
 
   <div class="bg-white p-4 rounded shadow">
     <a href="producto3.html">
-      <img src="cumpleaño.jpg" alt="Promo Cumpleaño" class="rounded w-full h-64 object-cover">
+      <img src="cumpleaño.jpg" alt="Promo Cumpleaño" class="rounded w-full h-48 sm:h-64 object-cover">
       <p class="text-center mt-2 font-medium">Promoción Cumpleaño</p>
     </a>
   </div>
 </section>
 
+<div class="flex justify-center items-center mt-6">
+  <button onclick="window.location.href='https://wa.me/59169394741'" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
+    Contáctanos al WhatsApp
+  </button>
+</div>
 
-    
-    <div class="text-center">
-      <button onclick="window.location.href='https://wa.me/59169394741'" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
-        Contactanos al Whatsapp
-      </button>
-    </div>
-
-    
     <footer class="text-center mt-12 text-sm text-gray-600">
       © 2025 Lemon Salsa. Todos los derechos reservados.
     </footer>
 
   </div>
 
-
-
-  
-  <script>
-    function abrirModal() {
-      document.getElementById("modal").classList.remove("hidden");
-      document.getElementById("modal").classList.add("flex");
-    }
-
-    function cerrarModal() {
-      document.getElementById("modal").classList.add("hidden");
-      document.getElementById("modal").classList.remove("flex");
-    }
-
-
-  </script>
 </body>
 </html>
 
