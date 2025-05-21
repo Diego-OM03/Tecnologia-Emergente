@@ -78,38 +78,78 @@
   <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
     <div class="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
       <button onclick="cerrarModal()" class="absolute top-2 right-3 text-gray-400 hover:text-red-500 text-xl">&times;</button>
-      <h2 class="text-2xl font-bold mb-4 text-center">Formulario de Compra</h2>
-      <form>
-        <div class="mb-4">
-          <label class="block mb-1 font-medium">Nombre completo</label>
-          <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" required>
-        </div>
-        <div class="mb-4">
-          <label class="block mb-1 font-medium">Número de Celular</label>
-          <input type="tel" class="w-full border border-gray-300 rounded px-3 py-2" required>
-        </div>
-        <div class="mb-6">
-          <label class="block mb-1 font-medium">Cantidad</label>
-          <input type="number" min="1" class="w-full border border-gray-300 rounded px-3 py-2" required>
-        </div>
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
-          Enviar pedido
-        </button>
-      </form>
+  
+      <!-- Contenido normal -->
+      <div id="contenidoFormulario">
+        <h2 class="text-2xl font-bold mb-4 text-center">Formulario de Compra</h2>
+        <form id="pedidoForm">
+          <div class="mb-4">
+            <label class="block mb-1 font-medium">Nombre completo</label>
+            <input name="entry.1986502839" type="text" class="w-full border border-gray-300 rounded px-3 py-2" required>
+          </div>
+          <div class="mb-4">
+            <label class="block mb-1 font-medium">Número de Celular</label>
+            <input name="entry.1520533895" type="tel" class="w-full border border-gray-300 rounded px-3 py-2" required>
+          </div>
+          <div class="mb-6">
+            <label class="block mb-1 font-medium">Cantidad</label>
+            <input name="entry.430860352" type="number" min="1" class="w-full border border-gray-300 rounded px-3 py-2" required>
+          </div>
+          <div class="mb-4">
+            <input type="hidden" name="entry.1599345325" value="Bote Pequeño">
+          </div>
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+            Enviar pedido
+          </button>
+        </form>
+      </div>
+  
+      <!-- Mensaje de éxito oculto -->
+      <div id="mensajeExito" class="hidden text-center">
+        <h2 class="text-2xl font-bold text-green-600 mb-4">¡Pedido enviado con éxito! ✅</h2>
+        <p class="text-gray-700">Nos pondremos en contacto contigo pronto.</p>
+      </div>
     </div>
   </div>
 
-  <script>
-    function abrirModal() {
-      document.getElementById("modal").classList.remove("hidden");
-      document.getElementById("modal").classList.add("flex");
-    }
 
-    function cerrarModal() {
-      document.getElementById("modal").classList.add("hidden");
-      document.getElementById("modal").classList.remove("flex");
+  <script>
+    const form = document.getElementById("pedidoForm");
+    const modal = document.getElementById("modal");
+    const contenidoFormulario = document.getElementById("contenidoFormulario");
+    const mensajeExito = document.getElementById("mensajeExito");
+  
+    function abrirModal() {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
     }
+  
+    function cerrarModal() {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      contenidoFormulario.classList.remove("hidden");
+      mensajeExito.classList.add("hidden");
+    }
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const data = new FormData(form);
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSftSTR_B2cdwJEleGY32kVAiBFcn1K-e8BA0haTopl_yvhOdg/formResponse", {
+        method: "POST",
+        mode: "no-cors",
+        body: data,
+      }).then(() => {
+        form.reset();
+        contenidoFormulario.classList.add("hidden");
+        mensajeExito.classList.remove("hidden");
+      });
+    });
   </script>
+
+
+
+
 </body>
 </html>
 
