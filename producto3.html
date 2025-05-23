@@ -78,26 +78,27 @@
   
       <!-- Contenido normal -->
       <div id="contenidoFormulario">
-      <h2 class="text-2xl font-bold mb-4 text-center">Formulario de Compra</h2>
-       <form action="https://docs.google.com/forms/d/e/1FAIpQLSftSTR_B2cdwJEleGY32kVAiBFcn1K-e8BA0haTopl_yvhOdg/formResponse" method="POST" target="_blank">
-        <div class="mb-4">
-          <label class="block mb-1 font-medium">Nombre completo</label>
-          <input name="entry.1986502839" type="text" class="w-full border border-gray-300 rounded px-3 py-2" required>
-        </div>
-        <div class="mb-4">
-          <label class="block mb-1 font-medium">Número de Celular</label>
-          <input name="entry.1520533895" type="tel" class="w-full border border-gray-300 rounded px-3 py-2" required>
-        </div>
-        <div class="mb-6">
-          <label class="block mb-1 font-medium">Cantidad</label>
-          <input name="entry.430860352" type="number" min="1" class="w-full border border-gray-300 rounded px-3 py-2" required>
-        </div>
-        <input type="hidden" name="entry.1599345325" value="Bote Pequeño">
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
-          Enviar pedido
-        </button>
-      </form>
-
+        <h2 class="text-2xl font-bold mb-4 text-center">Formulario de Compra</h2>
+        <form id="pedidoForm">
+          <div class="mb-4">
+            <label class="block mb-1 font-medium">Nombre completo</label>
+            <input name="entry.1986502839" type="text" class="w-full border border-gray-300 rounded px-3 py-2" required>
+          </div>
+          <div class="mb-4">
+            <label class="block mb-1 font-medium">Número de Celular</label>
+            <input name="entry.1520533895" type="tel" class="w-full border border-gray-300 rounded px-3 py-2" required>
+          </div>
+          <div class="mb-6">
+            <label class="block mb-1 font-medium">Cantidad</label>
+            <input name="entry.430860352" type="number" min="1" class="w-full border border-gray-300 rounded px-3 py-2" required>
+          </div>
+          <div class="mb-4">
+            <input type="hidden" name="entry.1599345325" value="Paquete Cumpleaño">
+          </div>
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+            Enviar pedido
+          </button>
+        </form>
       </div>
   
       <!-- Mensaje de éxito oculto -->
@@ -131,7 +132,7 @@
       e.preventDefault();
   
       const data = new FormData(form);
-      form("https://docs.google.com/forms/d/e/1FAIpQLSftSTR_B2cdwJEleGY32kVAiBFcn1K-e8BA0haTopl_yvhOdg/formResponse", {
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSftSTR_B2cdwJEleGY32kVAiBFcn1K-e8BA0haTopl_yvhOdg/formResponse", {
         method: "POST",
         mode: "no-cors",
         body: data,
