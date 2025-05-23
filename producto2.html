@@ -133,7 +133,7 @@
       e.preventDefault();
   
       const data = new FormData(form);
-      fetch("https://docs.google.com/forms/d/e/1FAIpQLSftSTR_B2cdwJEleGY32kVAiBFcn1K-e8BA0haTopl_yvhOdg/formResponse", {
+      form("https://docs.google.com/forms/d/e/1FAIpQLSftSTR_B2cdwJEleGY32kVAiBFcn1K-e8BA0haTopl_yvhOdg/formResponse", {
         method: "POST",
         mode: "no-cors",
         body: data,
